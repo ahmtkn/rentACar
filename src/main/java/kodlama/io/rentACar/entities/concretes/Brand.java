@@ -1,30 +1,25 @@
 package kodlama.io.rentACar.entities.concretes;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Table(name = "brands")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor // parametlereli constructor oluşturuyor
+@Entity
 public class Brand {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // id yi auotoincrement yapar
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "name")
     private String name;
-
-    public Brand() {
-    }
-
-    public Brand(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
